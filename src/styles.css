@@ -2,3 +2,28 @@
 
 @import "primeicons/primeicons.css";
 
+* {
+  box-sizing: border-box;
+}
+
+/* remove the default margin  */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+.showcase_1 {
+  margin: -1 !important;
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  background-image: url("assets/bgdark/5166950.jpg");
+}
