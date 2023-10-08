@@ -11,11 +11,44 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: #ccc;
+}
+a:hover {
+  color: #3B82F6;
+}
+/* Most of the css properties very common to every project*/
+
+img,picture,svg {
+  max-width: 100%;
+  display: block;
+  border-radius: 1%;
+  /*object-fit: cover;*/
+}
+
+ul li {
+  list-style: none;
+}
+p {
+  font-size: 1rem;
+  color: #7f8c9b;
+  line-height: 1.7;
 }
 
 .container {
   max-width: 80%;
   margin-inline: auto;
+}
+
+.text-secondary {
+  color: #48A078;
+}
+.temp {
+  height: 100dvh;
 }
 
 .showcase_1 {
@@ -27,3 +60,53 @@ body {
   color: #fff;
   background-image: url("assets/bgdark/5166950.jpg");
 }
+
+.showcase {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-color: #F4F8FD;
+  height: 100dvh;
+}
+
+.image-container  img{
+  /* width: 100%; */
+  /* margin: auto; */
+  object-fit: contain;
+  /* margin-bottom: 20px; */
+}
+
+.image-wrapper {
+  margin-bottom: 15px;
+}
+
+.image-wrapper img {
+  height: 25dvh;
+  max-width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+
+.photos {
+  /* background: #dfdfdf; */
+  padding: 1.2rem;
+
+  /* Addon  */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.photos img {
+  width: 15%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+
+}
+
+/* Fix the feature image inside the feature box */
+.feature-img img {
+  max-width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+}
+

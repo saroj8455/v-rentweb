@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ButtonModule } from 'primeng/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from "@angular/common/http";
-
+import { ButtonModule } from 'primeng/button';
+import { RatingModule } from 'primeng/rating';
+import { GalleriaModule } from 'primeng/galleria';
+import { PhotoService } from './services/photo.service';
+import { EditorModule } from 'primeng/editor';
+import { DividerModule } from 'primeng/divider';
 @NgModule({
   declarations: [
     AppComponent
@@ -19,8 +23,12 @@ import { HttpClientModule} from "@angular/common/http";
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
+    RatingModule,
+    GalleriaModule,
+    EditorModule,
+    DividerModule
   ],
-  providers: [],
+  providers: [PhotoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,21 @@
 <header>
-
+  <nav>
+    <div class="container">
+      <div class="card flex align-items-center justify-content-between">
+        <span class="text-5xl font-bold">Vrent</span>
+        <ul class="flex align-items-center gap-3">
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <p-button label="Sign Up" icon="pi pi-user-plus"></p-button>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <main>
-  <section class="showcase_1">
+  <!-- <section class="showcase_1">
     <div class="container">
       <article>
         <h1>Hello World App by Angular</h1>
@@ -18,10 +30,10 @@
       </article>
     </div>
   </section>
-  <section class="showcase_2">
+  <section class="showcase">
     <div class="container">
       <article>
-        <h1>Hello World App by React</h1>
+        <h1 class="text-5xl">Hello World App by React</h1>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, asperiores quos. Laborum, labore cupiditate.
           Temporibus vitae, voluptate eaque iure quod ut voluptatum enim, nostrum laborum, hic recusandae voluptatem?
@@ -31,10 +43,299 @@
           <p-button label="Read more" icon="pi pi-check"></p-button>
         </div>
       </article>
-      <article class="py-3">
-        <h1>Backend Message: </h1>
-        <span class="text-3xl">{{backendMessage}}</span>
-      </article>
+    </div>
+  </section> -->
+  <section class="showcase">
+    <div class="container">
+      <div class="flex align-items-center justify-content-center gap-3 py-4">
+        <div class="card flex flex-column justify-content-center">
+          <h1>
+            Welcome to Vrent Services - Your Perfect Apartment, Home, Shop Rental Partner
+          </h1>
+          <p>
+            At Vrent Services, we take the hassle out of apartment rentals. Our
+            easy rental process and tenant solutions make us the best choice for
+            your next home.
+          </p>
+          <p-button label="View All Services"></p-button>
+        </div>
+        <div class="card">
+          <img
+            src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/georgie-cobbs-bKjHgo_Lbpo-unsplash_lcgMt1xn.webp"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="review">
+    <div class="container">
+      <div class="card flex my-8 align-items-center justify-content-center gap-6">
+        <div class="flex gap-4">
+          <div class="flex flex-column align-items-center">
+            <span class="text-5xl">4.8</span>
+            <p-rating
+              [(ngModel)]="ratingCount"
+              [readonly]="true"
+              [cancel]="false"
+            ></p-rating>
+            <span class="text-1xl">2,394 Ratings</span>
+            <span class="text-1xl">Google Reviews</span>
+          </div>
+          <div class="flex flex-column align-items-center">
+            <span class="text-5xl">A+</span>
+            <p-rating
+              [(ngModel)]="ratingCount"
+              [readonly]="true"
+              [cancel]="false"
+            ></p-rating>
+            <span class="text-1xl">2,394 Ratings</span>
+            <span class="text-1xl">Google Reviews</span>
+          </div>
+        </div>
+        <div class="card flex align-items-center justify-content-between gap-3">
+        <div class="flex gap-3 align-items-center justify-content-center">
+          <!-- <div class="card">
+            <img
+              class="border-circle"
+              src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/georgie-cobbs-bKjHgo_Lbpo-unsplash_lcgMt1xn.webp"
+              height="150px"
+              width="250px"
+              alt=""
+              srcset=""
+            />
+          </div> -->
+          <div class="card">
+            <h1>What Our Happy Tenants Say</h1>
+            <h3 class="text-secondary">John Simpson</h3>
+            <p>
+              I couldn’t believe how easy it was to rent an apartment through
+              Vrent Services. The process was seamless, and I found my dream
+              home in no time.
+            </p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container my-5">
+      <!-- TextEditor implementation  -->
+      <!-- <div class="card">
+        <p-editor [(ngModel)]="text" [style]="{ height: '320px' }"></p-editor>
+        <button pButton ngClass="my-2 py-2" type="button" icon="pi pi-copy" (click)="copyClipboard(text)" label="Copy"></button>
+      </div>
+      <div class="card my-3">
+        <p-editor [(ngModel)]="textCopied" [style]="{ height: '320px' }"></p-editor>
+      </div>
+      <div class="card" [innerHTML]="textCopied" #editContainer></div> -->
+      <!-- TextEditor implementation -->
+
+      <!-- Galleria -->
+      <div class="card md:flex md:justify-content-center">
+        <!-- <button pButton type="button" icon="pi pi-external-link" label="Show" (click)="displayBasic = !displayBasic"></button> -->
+        <p-galleria
+          [value]="images"
+          [responsiveOptions]="responsiveOptions"
+          [containerStyle]="{ 'max-width': '640px' }"
+          [numVisible]="5"
+          [visible]="displayBasic"
+          [fullScreen]="true"
+          [showItemNavigators]="true"
+        >
+          <ng-template pTemplate="item" let-item>
+            <img [src]="item.itemImageSrc" style="width: 100%" />
+          </ng-template>
+          <ng-template pTemplate="thumbnail" let-item>
+            <div class="grid grid-nogutter justify-content-center">
+              <img [src]="item.thumbnailImageSrc" />
+            </div>
+          </ng-template>
+        </p-galleria>
+      </div>
+
+      <!-- <div class="card flex align-items-center gap-3">
+        <p-button label="Fetch Users" (click)="fetchUsers()"></p-button>
+        <span class="text-3xl">{{ocemUsers.length}}</span>
+      </div>
+      <div class="card" *ngIf="ocemUsers.length > 0 ">
+        <h3 class="text-secondary" *ngFor="let user of ocemUsers">{{user.name}} : {{user.id}}</h3>
+      </div> -->
+      <!-- Iterate with async  -->
+      <!-- <div class="card" *ngIf="(users$ | async); else eb">
+        <h3 *ngFor="let u of users$ | async">{{ u.name + u.id }}</h3>
+      </div>
+      <ng-template #eb>
+        <h1>Loading.......</h1>
+      </ng-template> -->
+    </div>
+  </section>
+  <section  class="my-3">
+    <div class="container">
+      <div class="card flex align-items-center justify-content-between">
+        <h1>Our Services</h1>
+        <button pButton type="button" (click)="displayBasic = !displayBasic" icon="pi pi-external-link" label="View All Services"></button>
+      </div>
+      <div class="card flex gap-2">
+        <div class="card">
+          <div class="image-wrapper">
+            <img  src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/sam-balye-fjTJ_Q0Pwkg-unsplash_lcgMt1xn.webp" alt="" srcset="">
+          </div>
+          <h4>Easy Rentals</h4>
+          <p>
+            Our Easy Rentals service offers a hassle-free, convenient process for finding and securing your ideal rental apartment.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="card">
+          <div class="image-wrapper ">
+            <img   src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/evelyn-paris-QR_vT8_hBZM-unsplash_lcgMt1xn.webp" alt="" srcset="">
+          </div>
+          <h4>Tenant Solutions</h4>
+          <p>
+            Our Tenant Solutions service offers timely maintenance and repair services, tenant education and resources, and exceptional customer service to make your rental experience enjoyable and…
+          </p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="card">
+          <div class="image-wrapper">
+            <img  src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/soroush-karimi-crjPrExvShc-unsplash_lcgMt1xn.webp" alt="" srcset="">
+          </div>
+          <h4>Hassle-Free Leasing</h4>
+          <p>
+            Our Hassle-Free Leasing service takes care of all the paperwork, lease agreements, and negotiations, making the leasing process simple and stress-free for you.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container my-5">
+      <h1>Image problem in CSS</h1>
+      <div class="photos">
+        <div class="card flex">
+          <img class="border-round" src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/soroush-karimi-crjPrExvShc-unsplash_lcgMt1xn.webp" alt="" srcset="">
+          <div class="text-1xl text-justify">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi et amet voluptate, dolor nobis sint vero. Adipisci, dicta architecto sint aliquam, eos commodi omnis corrupti saepe excepturi sequi at praesentium!
+          </div>
+        </div>
+      </div>
+      <div class="photos">
+        <div class="card flex">
+          <img class="border-round" src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/evelyn-paris-QR_vT8_hBZM-unsplash_lcgMt1xn.webp" alt="" srcset="">
+          <div class="text-1xl text-justify">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi et amet voluptate, dolor nobis sint vero. Adipisci, dicta architecto sint aliquam, eos commodi omnis corrupti saepe excepturi sequi at praesentium!
+          </div>
+        </div>
+      </div>
+      <div class="photos">
+        <div class="card flex">
+          <img class="border-round" src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/sam-balye-fjTJ_Q0Pwkg-unsplash_lcgMt1xn.webp" alt="" srcset="">
+          <div class="text-1xl text-justify">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi et amet voluptate, dolor nobis sint vero. Adipisci, dicta architecto sint aliquam, eos commodi omnis corrupti saepe excepturi sequi at praesentium!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="features">
+    <div class="container">
+
+      <p-divider align="center">
+        <span class="p-tag">Feature & Benefits</span>
+      </p-divider>
+      <!-- Feature Box -->
+      <div class="card flex align-items-center justify-content-center gap-3">
+        <div class="card">
+          <h1 class="text-center">Features</h1>
+          <div class="card flex align-items-center">
+            <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-text"></p-button>
+            <span class="text-1xl">Easy Rental Process</span>
+          </div>
+          <div class="card flex align-items-center">
+            <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-text"></p-button>
+            <span class="text-1xl">Hassle-Free Leasing</span>
+          </div>
+          <div class="card flex align-items-center">
+            <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-text"></p-button>
+            <span class="text-1xl">Personalized Tenant Solutions</span>
+          </div>
+          <div class="card flex align-items-center">
+            <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-text"></p-button>
+            <span class="text-1xl">Competitive Pricing</span>
+          </div>
+          <div class="card flex align-items-center">
+            <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-text"></p-button>
+            <span class="text-1xl">Ongoing Support</span>
+          </div>
+        </div>
+        <div class="card">
+          <h1>Benefits</h1>
+          <div class="card flex align-items-center">
+            <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-text"></p-button>
+            <span class="text-1xl">Stress-Free Experience</span>
+          </div>
+          <div class="card flex align-items-center">
+            <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-text"></p-button>
+            <span class="text-1xl">Peace of Mind</span>
+          </div>
+          <div class="card flex align-items-center">
+            <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-text"></p-button>
+            <span class="text-1xl">Fast Maintenance Response</span>
+          </div>
+          <div class="card flex align-items-center">
+            <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-text"></p-button>
+            <span class="text-1xl">Competitive Pricing</span>
+          </div>
+          <div class="card flex align-items-center">
+            <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-text"></p-button>
+            <span class="text-1xl">Sustained Partnership</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="feature-img">
+            <img class="pt-5 border-round" src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/herson-rodriguez-w8CcH9Md4vE-unsplash_lcgMt1xn.webp" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="team" class="pt-3">
+    <div class="container">
+      <div class="card">
+        <h1>Our Team</h1>
+        <p>Meet the Vrent Services Squad: The Team Behind Your Dream Apartment</p>
+      </div>
+      <div class="card team_member flex gap-2">
+      <div class="card flex gap-3 align-items-center justify-content-center">
+        <div class="profile_pic">
+          <img src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/team-member-1-scaled_lcgMt1xn.webp" alt="" srcset="">
+        </div>
+        <div class="card">
+          <h2>Jhon Smith</h2>
+          <span class="text-2xl text-secondary">Founder & CEO</span>
+          <div class="card bio">
+            John is the brains behind Vrent Services, with 15+ years of experience in the rental industry. He loves tacos and weekend road trips.
+          </div>
+        </div>
+      </div>
+      <div class="card flex gap-3 align-items-center justify-content-center">
+        <div class="profile_pic">
+          <img src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/team-member-2-scaled_lcgMt1xn.webp" alt="" srcset="">
+        </div>
+        <div class="card">
+          <h2>Jhon Smith</h2>
+          <span class="text-2xl text-secondary">Founder & CEO</span>
+          <div class="card bio">
+            John is the brains behind Vrent Services, with 15+ years of experience in the rental industry. He loves tacos and weekend road trips.
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </section>
 </main>
