@@ -11,6 +11,8 @@ import { GalleriaModule } from 'primeng/galleria';
 import { PhotoService } from './services/photo.service';
 import { EditorModule } from 'primeng/editor';
 import { DividerModule } from 'primeng/divider';
+import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'primeng/carousel';
 @NgModule({
   declarations: [
     AppComponent
@@ -26,7 +28,9 @@ import { DividerModule } from 'primeng/divider';
     RatingModule,
     GalleriaModule,
     EditorModule,
-    DividerModule
+    DividerModule,
+    CardModule,
+    CarouselModule
   ],
   providers: [PhotoService],
   bootstrap: [AppComponent]

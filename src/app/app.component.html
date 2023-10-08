@@ -129,7 +129,50 @@
   </section>
 
   <section>
-    <div class="container my-5">
+    <div class="container">
+      <div class="card flex align-items-center justify-content-between">
+        <h1>Our Services</h1>
+        <button pButton type="button" (click)="displayBasic = !displayBasic" icon="pi pi-external-link" label="View All Services"></button>
+      </div>
+    </div>
+    <div class="grid">
+    <div class="container flex flex-wrap my-5">
+      <div class="col-12 md:col-4 lg:col-4">
+        <div class="card">
+          <div class="image-wrapper">
+            <img  src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/sam-balye-fjTJ_Q0Pwkg-unsplash_lcgMt1xn.webp" alt="" srcset="">
+          </div>
+          <h4>Easy Rentals</h4>
+          <p>
+            Our Easy Rentals service offers a hassle-free, convenient process for finding and securing your ideal rental apartment.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="col-12 md:col-4 lg:col-4">
+        <div class="card">
+          <div class="image-wrapper ">
+            <img   src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/evelyn-paris-QR_vT8_hBZM-unsplash_lcgMt1xn.webp" alt="" srcset="">
+          </div>
+          <h4>Tenant Solutions</h4>
+          <p>
+            Our Tenant Solutions service offers timely maintenance and repair services, tenant education and resources, and exceptional customer service to make your rental experience enjoyable and…
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="col-12 md:col-4 lg:col-4">
+        <div class="card">
+          <div class="image-wrapper">
+            <img  src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/soroush-karimi-crjPrExvShc-unsplash_lcgMt1xn.webp" alt="" srcset="">
+          </div>
+          <h4>Hassle-Free Leasing</h4>
+          <p>
+            Our Hassle-Free Leasing service takes care of all the paperwork, lease agreements, and negotiations, making the leasing process simple and stress-free for you.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
       <!-- TextEditor implementation  -->
       <!-- <div class="card">
         <p-editor [(ngModel)]="text" [style]="{ height: '320px' }"></p-editor>
@@ -179,74 +222,48 @@
         <h1>Loading.......</h1>
       </ng-template> -->
     </div>
-  </section>
-  <section  class="my-3">
-    <div class="container">
-      <div class="card flex align-items-center justify-content-between">
-        <h1>Our Services</h1>
-        <button pButton type="button" (click)="displayBasic = !displayBasic" icon="pi pi-external-link" label="View All Services"></button>
-      </div>
-      <div class="card flex gap-2">
-        <div class="card">
-          <div class="image-wrapper">
-            <img  src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/sam-balye-fjTJ_Q0Pwkg-unsplash_lcgMt1xn.webp" alt="" srcset="">
-          </div>
-          <h4>Easy Rentals</h4>
-          <p>
-            Our Easy Rentals service offers a hassle-free, convenient process for finding and securing your ideal rental apartment.
-          </p>
-          <a href="#">Read More</a>
-        </div>
-        <div class="card">
-          <div class="image-wrapper ">
-            <img   src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/evelyn-paris-QR_vT8_hBZM-unsplash_lcgMt1xn.webp" alt="" srcset="">
-          </div>
-          <h4>Tenant Solutions</h4>
-          <p>
-            Our Tenant Solutions service offers timely maintenance and repair services, tenant education and resources, and exceptional customer service to make your rental experience enjoyable and…
-          </p>
-          <a href="#">Read More</a>
-        </div>
-        <div class="card">
-          <div class="image-wrapper">
-            <img  src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/soroush-karimi-crjPrExvShc-unsplash_lcgMt1xn.webp" alt="" srcset="">
-          </div>
-          <h4>Hassle-Free Leasing</h4>
-          <p>
-            Our Hassle-Free Leasing service takes care of all the paperwork, lease agreements, and negotiations, making the leasing process simple and stress-free for you.
-          </p>
-          <a href="#">Read More</a>
-        </div>
-      </div>
     </div>
   </section>
-  <section>
+
+  <section class="feedback">
     <div class="container my-5">
-      <h1>Image problem in CSS</h1>
-      <div class="photos">
-        <div class="card flex">
-          <img class="border-round" src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/soroush-karimi-crjPrExvShc-unsplash_lcgMt1xn.webp" alt="" srcset="">
-          <div class="text-1xl text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi et amet voluptate, dolor nobis sint vero. Adipisci, dicta architecto sint aliquam, eos commodi omnis corrupti saepe excepturi sequi at praesentium!
-          </div>
+      <h1 class="text-5xl text-secondary">Happy Tenants 😊</h1>
+      <div class="card">
+        <p-carousel [value]="feedbackRecords"  [numVisible]="1" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions" [autoplayInterval]="3000">
+          <ng-template let-feedback pTemplate="item">
+            <p-card  [header]="feedback.name">
+              <p class="m-0">
+                {{feedback.feedback}}
+              </p>
+          </p-card>
+        </ng-template>
+
+
+        </p-carousel>
+    </div>
+      <!-- <div class="grid">
+        <div class="col-12 md:col-4 lg:col-4">
+        <p-card  header="Navin Readdy">
+            <p class="m-0">
+              I wanted to share my sincere appreciation for the exceptional rental experience I recently had with <span class="font-bold">Vrent</span>. From the moment I inquired about the property to the day I returned the keys, your team demonstrated a level of professionalism and efficiency that truly stood out.
+            </p>
+        </p-card>
         </div>
-      </div>
-      <div class="photos">
-        <div class="card flex">
-          <img class="border-round" src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/evelyn-paris-QR_vT8_hBZM-unsplash_lcgMt1xn.webp" alt="" srcset="">
-          <div class="text-1xl text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi et amet voluptate, dolor nobis sint vero. Adipisci, dicta architecto sint aliquam, eos commodi omnis corrupti saepe excepturi sequi at praesentium!
-          </div>
+        <div class="col-12 md:col-4 lg:col-4">
+          <p-card header="Deepak Ku. Mahapatra">
+            <p class="m-0">
+              The rental process was remarkably smooth, thanks to your user-friendly online platform and the prompt responses from your customer service team. They were not only knowledgeable but also went the extra mile to ensure all my questions were answered and concerns addressed.
+            </p>
+        </p-card>
         </div>
-      </div>
-      <div class="photos">
-        <div class="card flex">
-          <img class="border-round" src="https://10web-site.ai/33/wp-content/uploads/sites/36/2023/10/sam-balye-fjTJ_Q0Pwkg-unsplash_lcgMt1xn.webp" alt="" srcset="">
-          <div class="text-1xl text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi et amet voluptate, dolor nobis sint vero. Adipisci, dicta architecto sint aliquam, eos commodi omnis corrupti saepe excepturi sequi at praesentium!
-          </div>
+        <div class="col-12 md:col-4 lg:col-4">
+          <p-card header="Jhon Smith">
+            <p class="m-0">
+              I appreciate the transparency in your pricing and the fairness in your policies. It's evident that your company values customer satisfaction and strives to create a positive experience for every tenant.
+            </p>
+        </p-card>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
   <section id="features">

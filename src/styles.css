@@ -110,3 +110,8 @@ p {
   object-fit: contain;
 }
 
+/* Set equal height of feedback card */
+.feedback .p-card {
+  min-height: 40dvh;
+}
+

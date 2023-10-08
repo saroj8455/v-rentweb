@@ -10,6 +10,11 @@ export interface IUser {
   pwd: string
 }
 
+export interface IFeedback {
+  name:string;
+  feedback:string
+}
+
 
 @Component({
   selector: 'app-root',
@@ -31,6 +36,15 @@ export class AppComponent implements OnInit{
   displayBasic!: boolean;
   images: any[] | undefined;
   responsiveOptions: any[] | undefined;
+  responsiveFeedback: any[] | undefined;
+  // feedbackRecords=[1,2,3,4,5,6,7,8];
+  feedbackRecords:IFeedback[]=[
+    {"name":"Navin Readdy","feedback":"I wanted to share my sincere appreciation for the exceptional rental experience I recently had with Vrent. From the moment I inquired about the property to the day I returned the keys, your team demonstrated a level of professionalism and efficiency that truly stood out."},
+    {"name":"Deepak Ku. Mahapatra","feedback":"The rental process was remarkably smooth, thanks to your user-friendly online platform and the prompt responses from your customer service team. They were not only knowledgeable but also went the extra mile to ensure all my questions were answered and concerns addressed."},
+    {"name":"Jhon Smith","feedback":"I appreciate the transparency in your pricing and the fairness in your policies. It's evident that your company values customer satisfaction and strives to create a positive experience for every tenant."},
+    {"name":"Subrat","feedback":"I will undoubtedly be recommending your rental services to friends and colleagues. Thank you for making my stay a pleasant one. I look forward to future engagements with your company."},
+    {"name":"Azad","feedback":"Upon arrival at the property, I was delighted to find it exactly as described - clean, well-maintained, and fully equipped. The attention to detail in preparing the space did not go unnoticed, and it significantly enhanced my overall stay."},
+  ];
 
   // Editor
   text!: string;
@@ -70,6 +84,24 @@ export class AppComponent implements OnInit{
                 numVisible: 1
             }
         ];
+    // Inital carasoul
+    this.responsiveFeedback = [
+      {
+          breakpoint: '1199px',
+          numVisible: 1,
+          numScroll: 1
+      },
+      {
+          breakpoint: '991px',
+          numVisible: 2,
+          numScroll: 1
+      },
+      {
+          breakpoint: '767px',
+          numVisible: 1,
+          numScroll: 1
+      }
+  ];
   }
 
   getMessage(){
