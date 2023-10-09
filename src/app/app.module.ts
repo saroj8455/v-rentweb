@@ -13,6 +13,8 @@ import { EditorModule } from 'primeng/editor';
 import { DividerModule } from 'primeng/divider';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
+import { MenubarModule } from 'primeng/menubar';
+import { InputTextModule } from 'primeng/inputtext';
 @NgModule({
   declarations: [
     AppComponent
@@ -30,7 +32,9 @@ import { CarouselModule } from 'primeng/carousel';
     EditorModule,
     DividerModule,
     CardModule,
-    CarouselModule
+    CarouselModule,
+    MenubarModule,
+    InputTextModule
   ],
   providers: [PhotoService],
   bootstrap: [AppComponent]
