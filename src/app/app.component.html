@@ -94,7 +94,7 @@
     <div class="grid">
       <div class="container flex align-items-center flex-wrap">
         <div class="col-12 md:col-6 lg:col-6">
-          <div class="flex gap-4">
+          <div class="flex justify-content-center gap-4">
             <div class="flex flex-column align-items-center">
               <span class="text-5xl">4.8</span>
               <p-rating
@@ -277,11 +277,13 @@
           [autoplayInterval]="3000"
         >
           <ng-template let-feedback pTemplate="item">
-            <p-card [header]="feedback.name">
-              <p class="m-0">
-                {{ feedback.feedback }}
-              </p>
-            </p-card>
+            <div class="feedback">
+              <p-card [header]="feedback.name">
+                <p class="m-0">
+                  {{ feedback.feedback }}
+                </p>
+              </p-card>
+          </div>
           </ng-template>
         </p-carousel>
       </div>
@@ -468,10 +470,10 @@
     </div>
   </section>
 </main>
-
+<p-divider></p-divider>
 <footer class="py-3">
   <div class="grid">
-    <div class="container flex flex-wrap justify-content-between">
+    <div class="container flex flex-wrap justify-content-around">
       <div class="col-12 md:col-4 lg:col-4">
         <div class="footer-section">
           <h3>Contact Us</h3>
@@ -494,11 +496,11 @@
           </ul>
         </div>
       </div>
-      <div class="col-12 md:col-4 lg:col-4">
+       <div class="col-12 md:col-4 lg:col-4">
         <div class="footer-section">
           <h3>Follow Us</h3>
           <p>Connect with us on social media:</p>
-          <ul class="social-icons">
+          <ul class="social-icons flex gap-2">
             <li>
               <a href="#" target="_blank"
                 ><i class="pi pi-facebook" style="font-size: 2.5rem"></i
@@ -519,10 +521,10 @@
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="copyright text-center">
       <p>&copy; 2023 Vrentservices.com All Rights Reserved.</p>
     </div>
   </div>
 </footer>
+

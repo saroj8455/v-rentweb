@@ -114,6 +114,6 @@ p {
 
 /* Set equal height of feedback card */
 .feedback .p-card {
-  min-height: 40dvh;
+  min-height: 50dvh;
 }
 
