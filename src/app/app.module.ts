@@ -5,19 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from "@angular/common/http";
-import { ButtonModule } from 'primeng/button';
-import { RatingModule } from 'primeng/rating';
-import { GalleriaModule } from 'primeng/galleria';
 import { PhotoService } from './services/photo.service';
-import { EditorModule } from 'primeng/editor';
-import { DividerModule } from 'primeng/divider';
-import { CardModule } from 'primeng/card';
-import { CarouselModule } from 'primeng/carousel';
-import { MenubarModule } from 'primeng/menubar';
-import { InputTextModule } from 'primeng/inputtext';
+import { PrimeModule } from './module/prime/prime.module';
+import { LandingComponent } from './components/landing/landing.component';
+import { ErrorComponent } from './components/error/error.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -26,15 +23,7 @@ import { InputTextModule } from 'primeng/inputtext';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ButtonModule,
-    RatingModule,
-    GalleriaModule,
-    EditorModule,
-    DividerModule,
-    CardModule,
-    CarouselModule,
-    MenubarModule,
-    InputTextModule
+    PrimeModule,
   ],
   providers: [PhotoService],
   bootstrap: [AppComponent]
