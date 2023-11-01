@@ -150,6 +150,17 @@ export class AppComponent implements OnInit {
     this.textCopied = text;
   }
 
+
+  validateUser() {
+    this.http.post("http://localhost/vbandhan/auth/validatejsonuser",{}).subscribe(user=>{
+      console.log(user);
+
+    })
+
+  }
+
+
+
   initMenubar() {
     this.items = [
       {

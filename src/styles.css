@@ -108,7 +108,7 @@ p {
 /* Fix the feature image inside the feature box */
 .feature-img img {
   max-width: 100%;
-  aspect-ratio: 3/2;
+  /* aspect-ratio: 3/2; */
   object-fit: contain;
 }
 
